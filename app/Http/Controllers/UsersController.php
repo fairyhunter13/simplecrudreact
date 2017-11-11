@@ -19,7 +19,8 @@ class UsersController extends Controller
         JavaScript::put([
           'users' => User::all()
         ]);
-        
+        return view('layout.app');
+
     }
 
     /**
