@@ -5,7 +5,7 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -15,24 +15,30 @@ require('./bootstrap');
  import React, { Component } from 'react';
  import ReactDOM from 'react-dom';
  import {BrowserRouter, Route, NavLink} from 'react-router-dom';
- import Header from './components/layout/Header';
- import Sidebar from './components/layout/Sidebar';
- import Footer from './components/layout/Footer';
 
- class App extends Component {
+ //layout
+ import {Aside,Header,Footer,Sidebar,Template} from './components/layout';
+
+ //content
+import {ListPengguna} from './components/pengguna';
+
+ export default class App extends Component {
      render() {
          return (
              <BrowserRouter>
                 <div>
-                 <Sidebar/>
-                 <Header/>
-
-                 <Footer/>
+                   <Aside />
+                   <Sidebar/>
+                   <Header/>
+                   <main id="main-container">
+                    <Route exact path="/" component={Template}/>
+                    <Route exact path="/manajemen-pengguna" component={ListPengguna}/>
+                   </main>
+                   <Footer/>
                 </div>
              </BrowserRouter>
          );
      }
  }
- export default App;
 
  ReactDOM.render(<App />, document.getElementById('page-container'));
