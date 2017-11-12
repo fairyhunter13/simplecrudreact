@@ -73,7 +73,7 @@
         <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
 
             <!-- Side Overlay-->
-            {{--<aside id="side-overlay">
+            <aside id="side-overlay">
                 <!-- Side Overlay Scroll Container -->
                 <div id="side-overlay-scroll">
                     <!-- Side Header -->
@@ -294,6 +294,7 @@
                                           </div>
                                       </td>
                                   </tr>
+                                  @endforeach
                               </tbody>
                           </table>
                       </div>
