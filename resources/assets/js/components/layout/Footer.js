@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
 
-class Footer extends Component{
+export default class Footer extends Component{
   render() {
       return (
         <footer id="page-footer" className="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
@@ -14,5 +14,3 @@ class Footer extends Component{
       );
   }
 }
-
-export default Footer;

@@ -20,7 +20,6 @@ class UsersController extends Controller
           'users' => User::all()
         ]);
         return view('layout.app');
-
     }
 
     /**
