@@ -138,27 +138,27 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-toggle="theme" data-theme="assets/css/themes/amethyst.min.css" tabindex="-1" href="javascript:void(0)">
+                                        <a data-toggle="theme" data-theme="{{asset('assets/css/themes/amethyst.min.css')}}" tabindex="-1" href="javascript:void(0)">
                                             <i class="fa fa-circle text-amethyst pull-right"></i> <span class="font-w600">Amethyst</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-toggle="theme" data-theme="assets/css/themes/city.min.css" tabindex="-1" href="javascript:void(0)">
+                                        <a data-toggle="theme" data-theme="{{asset('assets/css/themes/city.min.css')}}" tabindex="-1" href="javascript:void(0)">
                                             <i class="fa fa-circle text-city pull-right"></i> <span class="font-w600">City</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-toggle="theme" data-theme="assets/css/themes/flat.min.css" tabindex="-1" href="javascript:void(0)">
+                                        <a data-toggle="theme" data-theme="{{asset('assets/css/themes/flat.min.css')}}" tabindex="-1" href="javascript:void(0)">
                                             <i class="fa fa-circle text-flat pull-right"></i> <span class="font-w600">Flat</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-toggle="theme" data-theme="assets/css/themes/modern.min.css" tabindex="-1" href="javascript:void(0)">
+                                        <a data-toggle="theme" data-theme="{{asset('assets/css/themes/flat.min.css')}}" tabindex="-1" href="javascript:void(0)">
                                             <i class="fa fa-circle text-modern pull-right"></i> <span class="font-w600">Modern</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-toggle="theme" data-theme="assets/css/themes/smooth.min.css" tabindex="-1" href="javascript:void(0)">
+                                        <a data-toggle="theme" data-theme="{{asset('assets/css/themes/smooth.min.css')}}" tabindex="-1" href="javascript:void(0)">
                                             <i class="fa fa-circle text-smooth pull-right"></i> <span class="font-w600">Smooth</span>
                                         </a>
                                     </li>
@@ -266,33 +266,39 @@
 
                 <!-- Page Content -->
                 <div class="content">
-                    <!-- My Block -->
-                    <div class="block">
-                        <div class="block-header">
-                            <ul class="block-options">
-                                <li>
-                                    <button type="button"><i class="si si-settings"></i></button>
-                                </li>
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                                </li>
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                </li>
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
-                                </li>
-                                <li>
-                                    <button type="button" data-toggle="block-option" data-action="close"><i class="si si-close"></i></button>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">My Block</h3>
-                        </div>
-                        <div class="block-content">
-                            <p>...</p>
-                        </div>
-                    </div>
-                    <!-- END My Block -->
+                  <div class="block">
+                      <div class="block-header">
+                          <h3 class="block-title">Dynamic Table <small>Full pagination</small></h3>
+                      </div>
+                      <div class="block-content">
+                          <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality initialized in js/pages/base_tables_datatables.js -->
+                          <table class="table table-bordered table-striped js-dataTable-full-pagination">
+                              <thead>
+                                  <tr>
+                                      <th class="text-center"></th>
+                                      <th>Name</th>
+                                      <th class="hidden-xs">Email</th>
+                                      <th class="text-center" style="width: 10%;">Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  @foreach($users as $index=>$user)
+                                  <tr>
+                                      <td class="text-center">{{$index}}</td>
+                                      <td class="font-w600">{{$user->name}}</td>
+                                      <td class="hidden-xs">{{$user->email}}</td>
+                                      <td class="text-center">
+                                          <div class="btn-group">
+                                              <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button>
+                                              <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="fa fa-times"></i></button>
+                                          </div>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  <!-- END Dynamic Table Full Pagination -->
                 </div>
                 <!-- END Page Content -->
             </main>
@@ -306,7 +312,7 @@
                 <div class="pull-left">
                     <a class="font-w600" href="http://goo.gl/6LF10W" target="_blank">OneUI</a> &copy; <span class="js-year-copy"></span>
                 </div>
-            </footer>--}}
+            </footer>
             <!-- END Footer -->
         </div>
 

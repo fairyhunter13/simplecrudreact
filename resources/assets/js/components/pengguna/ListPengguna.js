@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {DataTable} from '../../components/crud';
+import {TablePengguna} from './';
 import {MainHeader} from '../../components/layout';
 import {withRouter} from 'react-router-dom';
 
@@ -34,7 +34,7 @@ class ListPengguna extends Component{
         <MainHeader header={header[0]} crumbs={crumbs}/>
 
         <div className="content">
-          <DataTable header={header[1]}/>
+          <TablePengguna header={header[1]}/>
         </div>
       </div>
     );
