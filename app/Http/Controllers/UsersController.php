@@ -22,6 +22,13 @@ class UsersController extends Controller
         return view('layout.app');
     }
 
+    public function test()
+    {
+        //
+        $data['users'] = User:all();
+        return view('layout.test',$data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

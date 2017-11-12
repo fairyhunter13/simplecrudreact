@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class MainHeader extends Component{
 
@@ -35,4 +36,16 @@ class MainHeader extends Component{
       );
     }
 }
+
+MainHeader.propTypes = {
+  header: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subTitle: PropTypes.string.isRequired
+  }).isRequired,
+  crumbs: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired
+  })).isRequired
+};
+
 export default MainHeader;
