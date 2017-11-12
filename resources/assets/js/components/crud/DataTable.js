@@ -3,10 +3,28 @@ import React,{ Component } from 'react';
 
 export default class DataTable extends Component{
   render(){
+    let thHeader = [];
+    let trRows = [];
+    let index = 0;
+    Object.keys(Simple.users[0]).forEach((head)=>{
+      if(head.toLowerCase().localeCompare('id')==0){
+         thHeader.push(
+           <th key={++index} className="text-center"></th>
+         );
+      }else{
+        thHeader.push(
+          <th key={++index} className="hidden-xs">{head.charAt(0).toUpperCase()+head.slice(1)}</th>
+        );
+      }
+    });
+    thHeader.push(
+      <th key={++index} className="text-center" style={{width: '10%'}}>Actions</th>
+    );
+
     return(
               <div className="block">
                 <div className="block-header">
-                  <h3 className="block-title">Dynamic Table <small>Full pagination</small></h3>
+                  <h3 className="block-title">{this.props.header.title} <small>{this.props.header.subTitle}</small></h3>
                 </div>
                 <div className="block-content">
                   <table className="table table-bordered table-striped js-dataTable-full-pagination">

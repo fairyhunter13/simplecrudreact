@@ -3,9 +3,25 @@ import {MainHeader} from './';
 
 export default class Template extends Component{
   render(){
+    let header = [
+      {
+        title: 'Title',
+        subTitle: 'Subtitle'
+      }
+    ];
+    let crumbs = [
+        {
+          text: 'Dashboard',
+          link: ''
+        },
+        {
+          text: 'Home',
+          link: location.pathname
+        }
+    ];
     return(
           <div>
-            <MainHeader/>
+            <MainHeader header={header[0]} crumbs={crumbs}/>
 
             <div className="content">
                 <div className="block">
