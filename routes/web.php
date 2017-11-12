@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('layout.app');
 });
 
-Route::resource('manajemen-pengguna','UsersController');
 Route::get('manajemen-pengguna/test','UsersController@test');
+Route::resource('manajemen-pengguna','UsersController');

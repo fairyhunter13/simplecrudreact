@@ -25,7 +25,7 @@ class UsersController extends Controller
     public function test()
     {
         //
-        $data['users'] = User:all();
+        $data['users'] = User::all();
         return view('layout.test',$data);
     }
 
